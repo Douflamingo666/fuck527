@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/index/css/video-play.css">
+<script type="text/javascript" src="__PUBLIC__/static/index/js/video-play.js"></script>
+<title>尽情勃起吧</title>
+
+</head>
+
+<body>
+<div id="html">
+	
+	{include file="public/header"}
+
+	<div id="content">
+
+		{include file="public/classfiy"}
+		
+		<div id="play-title">
+			<p>标题 >> {$videoplay.title}</p>
+		</div>
+
+		<div id="play">
+			<video width="900" height="520" src="__PUBLIC__/{$videoplay.path}" controls="controls" autoplay="autoplay"></video>
+		</div>
+
+		<div id="play-comment">
+			<div id="comment-title">
+				<u>>>评论区</u>
+				<img src="__PUBLIC__/static/index/images/play-click.jpg" alt="点赞" width="25" height="25" id="zan" onclick="isnice();">
+			</div>
+
+			<div id="comment-content">
+				<ul>
+					{volist name="comres" id="vo"}
+					<li>{$vo.content}</li>
+					{/volist}
+				<ul>
+			</div>
+
+			<hr />
+
+			<div id="comment-write">
+				<textarea cols="100" rows="4" form="form1" name="textarea"></textarea>
+				<form action="{:url('write_comment')}" method="post" id="form1">
+					<input type="hidden" name="vid" value="{$vid}">
+					<input type="submit" value="上传我的评论">
+				</form>
+			</div>
+		</div>
+	</div>
+
+	{include file="public/footer"}
+
+</div>
+</body>
+</html>

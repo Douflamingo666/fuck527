@@ -1,0 +1,10 @@
+<div id="top">
+	<p>这里是导航栏</p>
+	<ul>
+		<li><a href="#">管理员：<?php echo session('username')?></a></li>
+		<li><a href="{:url('Admin/edit',['id' => session('id')])}">修改密码</a></li>
+		<li><a href="{:url('Login/logout')}">退出</a></li>
+	</ul>
+</div>
+
+<hr />

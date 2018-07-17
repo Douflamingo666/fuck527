@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/index/css/story-play.css">
+<title>尽情勃起吧</title>
+
+</head>
+
+<body>
+<div id="html">
+	
+	{include file="public/header"}
+
+	<div id="content">
+
+		{include file="public/classfiy"}
+		
+		<div id="play-title">
+			<p>标题 >> {$storyplay.title}</p>
+		</div>
+
+		<div id="play">
+			<p>
+			{for start = "0" end="$storynum"}
+				{$file[$i]}
+				<br />
+			{/for}
+			</p>
+		</div>
+
+	</div>
+
+	{include file="public/footer"}
+
+</div>
+</body>
+</html>

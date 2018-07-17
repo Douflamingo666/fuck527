@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<title>视频修改</title>
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/static/admin/css/index.css">
+<script type="text/javascript" src="__PUBLIC__/static/admin/js/video-add.js"></script>
+</head>
+<body>
+
+<h1>欢迎来到夜夜撸后台管理</h1>
+<hr />
+
+{include file="public/top"}
+
+{include file="public/left"}
+
+<div id="video-content" style="background-color:yellow">
+	<p>新增视频</p>
+	<form action="" method="post" enctype="multipart/form-data" name="myvideo">
+		<table>
+			<tbody>
+				<tr>
+					<th>*视频标题</th>
+					<td><input type="text" name="title" id="title" value="{$videores.title}"></td>
+				</tr>
+				<tr>
+					<th>*视频分类</th>
+					<td>
+						<select name="column">
+						{volist name="colres" id="vo"}
+							<option value="{$vo.name}" {if condition='$videores.column eq $vo.name'}selected='selected'{/if}>{$vo.name}</option>
+						{/volist}
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><input type="submit" name="提交" onclick="return isvalue()"></td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<title>图片列表</title>
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/static/admin/css/index.css">
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/static/admin/css/image-lst.css">
+<script type="text/javascript" src="__PUBLIC__/static/admin/js/image-delete.js"></script>
+</head>
+<body>
+
+<h1>欢迎来到夜夜撸后台管理</h1>
+<hr />
+
+{include file="public/top"}
+
+{include file="public/left"}
+
+<div id="image-content" style="background-color:yellow">
+	<p><a href="add">+新增图片</a></p>
+	
+	<div id="image-list">
+		<p>这里是图片管理的列表栏目</p>
+		<table>
+			<tbody>
+				<tr>
+					<th width="3%">ID</th>
+					<th>图片标题</th>
+					<th width="10%">所属分类</th>
+					<th width="10%">操作</th>
+				</tr>
+				{volist name="imageres" id="vo"}
+				<tr>
+					<td>{$vo.iid}</td>
+					<td>{$vo.title}</td>
+					<td>{$vo.column}</td>
+					<td>
+						<a href="{:url('edit',['id' => $vo.iid])}">修改</a>&nbsp&nbsp
+						<a href="{:url('delete',['id' => $vo.iid])}" onclick="return isdelete()">删除</a>
+					</td>
+				</tr>
+				{/volist}
+			</tbody>
+		</table>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<title>小说修改</title>
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/static/admin/css/index.css">
+<script type="text/javascript" src="__PUBLIC__/static/admin/js/story-add.js"></script>
+</head>
+<body>
+
+<h1>欢迎来到夜夜撸后台管理</h1>
+<hr />
+
+{include file="public/top"}
+
+{include file="public/left"}
+
+<div id="story-content" style="background-color:yellow">
+	<p>修改小说</p>
+	<form action="" method="post" enctype="multipart/form-data" name="mystory">
+		<table>
+			<tbody>
+				<tr>
+					<th>*小说标题</th>
+					<td><input type="text" name="title" id="title" value="{$storyres.title}"></td>
+				</tr>
+				<tr>
+					<th>*小说分类</th>
+					<td>
+						<select name="column">
+						{volist name="column" id="vo"}
+							<option value="{$vo.name}" {if condition="$storyres.column eq $vo.name"}selected="selected"{/if}>{$vo.name}</option>
+						{/volist}
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="提交" onclick="return isvalue();"></td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>激情图片</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/index/css/image-classfiy.css">
+</head>
+<body>
+
+{include file="public/header"}
+
+<div id="content">
+	{include file="public/classfiy"}
+	
+	<div id='position'>
+		您当前的位置 >> {$type}
+	</div>
+
+	<div id="image-list">
+		<ul>
+			{volist name="newimage" id="vo"}
+			<li><img src="__PUBLIC__/static/index/images/image-icon.jpg" width="25" height="25"><a href="{:url('Image/play',array('iid' => $vo.iid))}">{$vo.title}</a></li>
+			{/volist}
+		</ul>
+	</div>
+
+	<div class="list-page">
+		{$newimage -> render()}
+	</div>
+
+</div>
+
+{include file="public/footer"}
+
+</body>
+</html>

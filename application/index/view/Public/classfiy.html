@@ -1,0 +1,22 @@
+<div id="classfiy">
+	<table class="classfiy">
+		<tr>
+			<th><a href="{:url('Video/index')}">电影区</a></th>
+			{volist name="videores" id="vo"}
+			<td><a href="{:url('Video/classfiy',array('type' => $vo.name))}">{$vo.name}</a></td>
+			{/volist}
+		</tr>
+		<tr>
+			<th><a href="{:url('Story/index')}">小说区</a></th>
+			{volist name="storyres" id="vo"}
+			<td><a href="{:url('Story/classfiy',array('type' => $vo.name))}">{$vo.name}</a></td>
+			{/volist}
+		</tr>
+		<tr>
+			<th><a href="{:url('Image/index')}">图片区</a></th>
+			{volist name='imageres' id='vo'}
+			<td><a href="{:url('Image/classfiy',array('type' => $vo.name))}">{$vo.name}</a></td>
+			{/volist}
+		</tr>
+	</table>
+</div>

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/index/css/image-index.css">
+<title>FUCK527</title>
+</head>
+
+<body>
+<div id="html">
+	
+		{include file="public/header"}
+	<div id="content">
+		{include file="public/classfiy"}
+		
+		<div id="image-recom">
+			<p>>>推荐图片</p>
+
+			<div id="recom-content">
+				<ul>
+					{for start = "0" end = "$resend"}
+					<li><img src="__PUBLIC__/static/index/images/image-icon.jpg" width="25" height="25"><a href="{:url('Image/play',array('iid' => $imgres[$i]['iid']))}">{$imgres[$i]['title']}</a></li>
+					{/for}
+				</ul>
+			</div>
+		</div>
+
+		<div id="image-list">
+			<div id="list-title">
+				<img src="__PUBLIC__/static/index/images/list-title.jpg" width="35" height="35">
+				<u>不要排行榜</u>
+			</div>
+			<div class="list-content">
+				<a href="#" class="center">人前好学生，人后小骚货</a>
+				<u class="right"><img src="__PUBLIC__/static/index/images/list-click.jpg" width="15" height="15">17856</u>
+			</div>
+			<div class="list-content">
+				<a href="#" class="center">北京出差，顺便找个小姐解解闷</a>
+				<u class="right"><img src="__PUBLIC__/static/index/images/list-click.jpg" width="15" height="15">15856</u>
+			</div>
+			<div class="list-content">
+				<a href="#" class="center">人北京出差，顺便找个小姐解解闷</a>
+				<u class="right"><img src="__PUBLIC__/static/index/images/list-click.jpg" width="15" height="15">12856</u>
+			</div>
+			<div class="list-content">
+				<a href="#" class="center">前好学生，人后小骚货人前好学生，人后小骚货</a>
+				<u class="right"><img src="__PUBLIC__/static/index/images/list-click.jpg" width="15" height="15">11856</u>
+			</div>
+			<div class="list-content">
+				<a href="#" class="center">人前好学生，人后小骚货jiang jjaignji</a>
+				<u class="right"><img src="__PUBLIC__/static/index/images/list-click.jpg" width="15" height="15">9856</u>
+			</div>
+		</div>
+
+	</div>
+	
+	{include file="public/footer"}
+
+</div>
+</body>
+</html>

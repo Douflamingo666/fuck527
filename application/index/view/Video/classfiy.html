@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>热血电影</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/index/css/video-classfiy.css">
+</head>
+<body>
+
+{include file="public/header"}
+
+<div id="content">
+	{include file="public/classfiy"}
+	
+	<div id='position'>
+		您当前的位置 >> {$type}
+	</div>
+
+	<div id="videolist">
+		{volist name="newvideo" id="vo"}
+		<div>
+			<a href="{:url('play',array('id' => $vo.vid))}">
+				<video width="200" height="110" src="__PUBLIC__/{$vo.path}"></video>
+				<p class="video-title">{$vo.title}</p>
+			<a>
+		</div>
+		{/volist}
+	</div>
+	<div class="list-page">
+		{$newvideo -> render()}
+	</div>
+
+</div>
+
+{include file="public/footer"}
+
+</body>
+</html>

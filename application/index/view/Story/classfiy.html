@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>浪漫小说</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/index/css/story-classfiy.css">
+</head>
+<body>
+
+{include file="public/header"}
+
+<div id="content">
+	{include file="public/classfiy"}
+	
+	<div id='position'>
+		您当前的位置 >> {$type}
+	</div>
+
+	<div id="story-list">
+		<ul>
+			{volist name="newstory" id="vo"}
+			<li><img src="__PUBLIC__/static/index/images/story-icon.jpg" width="25" height="25"><a href="{:url('Story/play',array('sid' => $vo.sid))}">{$vo.title}</a></li>
+			{/volist}
+		</ul>
+	</div>
+
+	<div class="list-page">
+		{$newstory -> render()}
+	</div>
+
+</div>
+
+{include file="public/footer"}
+
+</body>
+</html>
